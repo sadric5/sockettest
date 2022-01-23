@@ -1,6 +1,6 @@
 import socket
-
-address =("10.0.0.86", 8080)
+from coolSocket import config
+address =(config.HOST, config.PORT)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(address)
 s.listen(2)

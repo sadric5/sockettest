@@ -1,7 +1,7 @@
 import socket
 import config
 from threading import Thread
-
+import time
 
 def clientthread(f):
     d = f.recv(1024)
@@ -18,6 +18,9 @@ s.connect(add)
 while True:
     t = Thread(target=clientthread, args=(s,), daemon=True)
     t.start()
+    #give ample time for the thread to be execute.
+    #for testing. fix it later.
+    time.sleep(1)
     data = input("You message:")
     s.send(data.encode('utf-8'))
 

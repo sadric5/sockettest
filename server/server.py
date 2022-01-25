@@ -11,11 +11,11 @@ print("Server start >>>>>>")
 clients =[]
 while True:
     con, add = s.accept()
-    if con in clients:
-        pass
-    else:
-        clients.append(con)
-    t = Thread(target=handle.newconnection, args=(clients,), name="socket")
+    print(con)
+    # clients.append(con)
+    t = Thread(target=handle.newconnection, args=(con,s,), name="socket")
     t.daemon=True
     t.start()
+
+
 

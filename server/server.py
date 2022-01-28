@@ -16,6 +16,3 @@ while True:
     t = Thread(target=handle.newconnection, args=(con,s,), name="socket")
     t.daemon=True
     t.start()
-
-
-
